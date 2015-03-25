@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="bu">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+
+  <!-- mobile webapp configuration -->
+  <meta name="apple-mobile-web-app-capable" content="yes"><!-- full screen -->
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="transparent">
+  <meta name="format-detection" content="telephone=no"><!-- no phone number recognition -->
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"><!-- fixed scale to 1.0 -->
+
+  <title>bu styles & scripts</title>
+
+  <!-- @if build == 'debug' -->
+  <link rel="stylesheet" type="text/css" href="/build/static/css/bu.css">
+  <script src="/src/scripts/bu.js"></script>
+  <!-- @endif -->
+  <!-- @if build == 'release' -->
+  <link rel="stylesheet" type="text/css" href="/release/bu.min.css">
+  <script src="/release/bu.min.js"></script>
+  <!-- @endif -->
+</head>
+
+<body>
+Hello
+</body>
+</html>

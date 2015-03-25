@@ -1,0 +1,32 @@
+//-------------------------------------------------------------------
+// bu.mixins
+//-------------------------------------------------------------------
+
+/* responsive */
+@mixin responsive($media) {
+  @if $media == small {
+    @media only screen and (max-width: $device-small-max) {
+      @content;
+    }
+  } @else if $media == medium {
+    @media only screen and (min-width: $device-medium-min) and (max-width: $device-medium-max) {
+      @content;
+    }
+  } @else if $media == large {
+    @media only screen and (min-width: $device-large-min) {
+      @content;
+    }
+  }
+}
+
+/* transition */
+@mixin transition($str) {
+  -webkit-transition: $str;
+  transition        : $str;
+}
+
+%disable-link {
+  pointer-events : none;
+  cursor         : default;
+  text-decoration: none;
+}

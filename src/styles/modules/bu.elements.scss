@@ -1,0 +1,200 @@
+//-------------------------------------------------------------------
+// bu.elements
+//-------------------------------------------------------------------
+[bu-container] {
+  position: absolute !important;
+  height  : 100%;
+  width   : 100%;
+  margin  : 0;
+
+  /* columns */
+  @include column-width(1024px);
+  @include column-gap(0);
+  @include column-count(auto);
+}
+
+[bu-content] {
+  font-weight   : 400;
+  line-height   : 1.6;
+  white-space   : normal;
+  text-align    : left;
+  vertical-align: baseline;
+
+  text-rendering        : optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+[bu-page] {
+  width : 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+//---------------------------------------------------------
+// element: html
+//---------------------------------------------------------
+html {
+  @include responsive(small) {
+    font-size  : $bukFontSizeSmall;
+    line-height: $bukLineHeightSmall;
+  }
+  @include responsive(medium) {
+    font-size  : $bukFontSizeMedium;
+    line-height: $bukLineHeightMedium;
+  }
+  @include responsive(large) {
+    font-size  : $bukFontSizeLarge;
+    line-height: $bukLineHeightLarge;
+  }
+}
+
+//---------------------------------------------------------
+// element: body
+//---------------------------------------------------------
+body {
+  color  : $bukTextColor;
+  padding: $bukContentPadding;
+}
+
+//---------------------------------------------------------
+// element: paragraph
+//---------------------------------------------------------
+p {
+  text-indent: 0;
+  margin     : 1rem 0 1rem 0;
+}
+
+//---------------------------------------------------------
+// element: link
+//---------------------------------------------------------
+a {
+  color          : $bukLinkColor;
+  text-decoration: underline;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+  &:visited {
+    color: $bukTextColorDark;
+  }
+}
+
+//---------------------------------------------------------
+// element: miscellaneous
+//---------------------------------------------------------
+em {
+  font-style: italic;
+}
+
+/* ul, ol : no margin around it */
+ol, ul {
+  margin: .25rem 0 0 0 !important;
+}
+
+ol li {
+  margin: 0.125rem 0 0 2.5rem; // maximum 3 digits
+}
+ul li {
+  margin      : 0.125rem 0 0 1.25rem;
+  padding-left: .5rem;
+}
+
+//---------------------------------------------------------
+// element: h1, h2, h3, h4, h5, h6
+//---------------------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+  color      : $bukHeadingColor;
+  line-height: $bukHeadingLineHeight;
+  font-weight: normal;
+  border     : none;
+}
+
+h1 {
+  font-size    : 1.6rem;
+  margin-top   : 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size    : 1.5rem;
+  margin-top   : 0.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size    : 1.2rem;
+  font-weight  : bold;
+  margin-top   : .5rem;
+  margin-bottom: .5rem;
+}
+
+h4, h5, h6 {
+  font-size    : 1rem;
+  font-weight  : bold;
+  margin-top   : .5rem;
+  margin-bottom: .5rem;
+}
+
+h5, h6 {
+  color: $bukTextColorMedium;
+}
+
+
+//---------------------------------------------------------
+// element: sup, sub
+//---------------------------------------------------------
+sub,
+sup {
+  font-size     : 75%;
+  line-height   : 0;
+  position      : relative;
+  vertical-align: baseline;
+  white-space   : nowrap;
+}
+
+sup {
+  top: -0.45rem;
+  & > a {
+    text-decoration: none;
+  }
+}
+
+sub {
+  bottom: -0.225rem;
+  & > a {
+    text-decoration: none;
+  }
+}
+
+//---------------------------------------------------------
+// element: blockquote
+//---------------------------------------------------------
+blockquote {
+  font-family: $bukFontQuote;
+  quotes     : "\201C" "\201D";
+  padding    : 1rem 1.75rem 1rem 1.75rem;
+  position   : relative;
+  overflow   : hidden;
+
+  &:before {
+    content: open-quote;
+    font-size: 2.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &:after {
+    content: close-quote;
+    font-size: 2.5rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+//---------------------------------------------------------
+// element: code
+//---------------------------------------------------------
+pre {
+  word-break: break-word; // wrap around long lines
+}

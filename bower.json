@@ -1,0 +1,22 @@
+{
+  "name": "bu",
+  "version": "0.1.0",
+  "homepage": "https://github.com/bbdbu/bu",
+  "authors": [
+    "bbdbu, inc <contact@bbdbu.com> (http://bbdbu.com)"
+  ],
+  "description": "basic styles & scripts for bu, the writers' markup language",
+  "main": "build/bu.css, build/bu.js",
+  "keywords": [
+    "buk",
+    "bbdbu"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
