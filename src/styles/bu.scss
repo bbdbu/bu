@@ -10,3 +10,15 @@
 @import "modules/bu.reset";
 @import "modules/bu.flex";
 @import "modules/bu.lang.en";
+@import "modules/bu.elements";
+
+/* @if build !== 'release' */
+  * *:hover { border: 1px dotted #89A81E }                  /* Solid Green */
+  * * *:hover { border: 1px dotted #F34607 }                /* Solid Orange */
+  * * * *:hover { border: 1px dotted #5984C3 }              /* Solid Blue */
+  * * * * *:hover { border: 1px dotted #CD1821 }            /* Solid Red */
+  * * * * * *:hover { border: 1px dotted #89A81E }          /* Dotted Green */
+  * * * * * * *:hover { border: 1px dotted #F34607 }        /* Dotted Orange */
+  * * * * * * * *:hover { border: 1px dotted #5984C3 }      /* Dotted Blue */
+  * * * * * * * * *:hover { border: 1px dotted #CD1821 }    /* Dotted Red */
+/* @endif */
