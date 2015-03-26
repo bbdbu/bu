@@ -127,7 +127,7 @@ gulp.task('server', function() {
 gulp.task('watch', function() {
   gulp.watch('src/styles/**/*.scss', [ 'styles:debug' ]);
   gulp.watch('src/scripts/*.js', [ 'scripts:debug' ]);
-  gulp.watch('src/*.html', [ 'html:debug' ]);
+  gulp.watch('src/**/*.html', [ 'html:debug' ]);
 });
 
 /* develop */

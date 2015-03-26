@@ -13,12 +13,12 @@
 @import "modules/bu.elements";
 
 /* @if build !== 'release' */
-  * *:hover { border: 1px dotted #89A81E }                  /* Solid Green */
-  * * *:hover { border: 1px dotted #F34607 }                /* Solid Orange */
-  * * * *:hover { border: 1px dotted #5984C3 }              /* Solid Blue */
-  * * * * *:hover { border: 1px dotted #CD1821 }            /* Solid Red */
-  * * * * * *:hover { border: 1px dotted #89A81E }          /* Dotted Green */
-  * * * * * * *:hover { border: 1px dotted #F34607 }        /* Dotted Orange */
-  * * * * * * * *:hover { border: 1px dotted #5984C3 }      /* Dotted Blue */
-  * * * * * * * * *:hover { border: 1px dotted #CD1821 }    /* Dotted Red */
+  * *:hover { outline: dotted #89A81E }                  /* Solid Green */
+  * * *:hover { outline: dotted #F34607 }                /* Solid Orange */
+  * * * *:hover { outline: dotted #5984C3 }              /* Solid Blue */
+  * * * * *:hover { outline: dotted #CD1821 }            /* Solid Red */
+  * * * * * *:hover { outline: dotted #89A81E }          /* Dotted Green */
+  * * * * * * *:hover { outline: dotted #F34607 }        /* Dotted Orange */
+  * * * * * * * *:hover { outline: dotted #5984C3 }      /* Dotted Blue */
+  * * * * * * * * *:hover { outline: dotted #CD1821 }    /* Dotted Red */
 /* @endif */
