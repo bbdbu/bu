@@ -7,12 +7,21 @@
 //-------------------------------------------------------------------
 angular.module('bu')
 .value('bu.settings', {
-  /* bu.console */
+  // bu.console //
 
   /* jshint ignore:start */
   LOGGING: !('/* @echo build */' === 'release'), /* logging (disable/enable) */
   /* jshint ignore:end */
 
-  /* bu.flex */
-  FLEX_RESIZE_INTERVAL: 200, /* unit: ms */
+  // resizing interval //
+  RESIZE_INTERVAL: 200, /* unit: ms */
+
+  // bu.responsive //
+  RESPONSIVE_SMALL : 320,
+  RESPONSIVE_LARGE : 640,
+
+  // bu.background //
+  BG_SIZE    : 'cover',
+  BG_POSITION: 'center',
+  BG_REPEAT  : 'no-repeat'
 });

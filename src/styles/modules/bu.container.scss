@@ -1,0 +1,14 @@
+//-------------------------------------------------------------------
+// bu.container
+//-------------------------------------------------------------------
+[bu-container] {
+  position: absolute !important;
+  height  : 100%;
+  width   : 100%;
+}
+[bu-container="page"] {
+  /* columns */
+  @include column-width(1024px);
+  @include column-gap(0);
+  @include column-count(auto);
+}

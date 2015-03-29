@@ -16,9 +16,8 @@ angular.module('bu').directive('buContainer', [
   function($q, $injector, $c, $events, $settings, $u) {
     var SPECIFICATION = {
       name    : 'buContainer',
-      options : ['mode', 'padding'],
+      options : ['padding'],
       defaults: {
-        mode   : 'page',
         padding: '0'
       }
     };
@@ -29,9 +28,6 @@ angular.module('bu').directive('buContainer', [
 
       // apply options //
       element.css('padding', options.padding);
-      if (options.mode === 'scroll') {
-        element.css({ height: 'auto' });
-      }
     }
 
     return {

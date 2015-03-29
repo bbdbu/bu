@@ -1,34 +1,6 @@
-//-------------------------------------------------------------------
+//
 // bu.elements
-//-------------------------------------------------------------------
-[bu-container] {
-  position: absolute !important;
-  height  : 100%;
-  width   : 100%;
-  margin  : 0;
-
-  /* columns */
-  @include column-width(1024px);
-  @include column-gap(0);
-  @include column-count(auto);
-}
-
-[bu-content] {
-  font-weight   : 400;
-  line-height   : 1.6;
-  white-space   : normal;
-  text-align    : left;
-  vertical-align: baseline;
-
-  text-rendering        : optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
-[bu-page] {
-  width : 100%;
-  height: 100%;
-  overflow: hidden;
-}
+//
 
 //---------------------------------------------------------
 // element: html
@@ -198,3 +170,34 @@ blockquote {
 pre {
   word-break: break-word; // wrap around long lines
 }
+
+//---------------------------------------------------------
+// element: dl
+//---------------------------------------------------------
+dl.inline dd {
+  display: inline;
+  margin: 0;
+}
+dl.inline dd:after{
+  display: block;
+  content: '';
+}
+dl.inline dt{
+  display: inline-block;
+  min-width: 100px;
+}
+// dl {
+//  width:100%;
+//  overflow:hidden;
+//  background:#ff0;
+// }
+// dt {
+//  float:left;
+//  width:50%; adjust the width; make sure the total of both is 100%
+//  background:#cc0;
+// }
+// dd {
+//  float:left;
+//  width:50%; /* adjust the width; make sure the total of both is 100% */
+//  background:#dd0
+// }

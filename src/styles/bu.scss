@@ -9,8 +9,34 @@
 @import "modules/bu.fonts";
 @import "modules/bu.reset";
 @import "modules/bu.flex";
+@import "modules/bu.container";
+@import "modules/bu.content";
+@import "modules/bu.page";
+@import "modules/bu.cover";
+
 @import "modules/bu.lang.en";
 @import "modules/bu.elements";
+
+.slabtexted .slabtext
+        {
+        display:-moz-inline-box;
+        display:inline-block;
+        white-space:nowrap;
+        }
+.slabtextinactive .slabtext
+        {
+        display:inline;
+        white-space:normal;
+        font-size:1em !important;
+        letter-spacing:inherit !important;
+        word-spacing:inherit !important;
+        *letter-spacing:0 !important;
+        *word-spacing:0 !important;
+        }
+.slabtextdone .slabtext
+        {
+        display:block;
+        }
 
 /* @if build !== 'release' */
   * *:hover { outline: dotted #89A81E }                  /* Solid Green */

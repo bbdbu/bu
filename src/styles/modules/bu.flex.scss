@@ -1,16 +1,23 @@
 //-------------------------------------------------------------------
 // bu.flex
 //-------------------------------------------------------------------
-[bu-flex="row"]{
-  width : 100%;
-  & > [bu-flex-element] {
-    display: inline-block;
+.bu .flex.column {
+  height: 100% !important;
+  display: flex;
+  flex-direction: column;
+
+  & > .expand {
+    flex-grow  : 1;
+    flex-shrink: 1;
   }
 }
+.bu .flex.row {
+  width: 100% !important;
+  display: flex;
+  flex-direction: row;
 
-[bu-flex="column"] {
-  height: 100%;
-  & > [bu-flex-element] {
-    width: 100% !important;
+  & > .expand {
+    flex-grow  : 1;
+    flex-shrink: 1;
   }
 }

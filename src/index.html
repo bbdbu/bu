@@ -20,24 +20,30 @@
   <link rel="stylesheet" type="text/css" href="/release/bu.min.css">
   <!-- @endif -->
   <script src="/src/scripts/vendor/vendor.min.js"></script>
+  <script src="/src/scripts/vendor/jquery.slabtext.min.js"></script>
 </head>
 
 <body>
-  <div bu-container
-       bu-container-options="{ mode: 'scroll', padding: '2rem 0' }">
-    <div bu-content
-         bu-content-padding="0 2rem">
+  <div bu-container="scroll"
+       bu-container-options="{ padding: '0' }">
+    <div bu-content class="bu"
+         bu-content-options="{ padding: '0' }">
       <!-- @include html/cover.html -->
     </div>
   </div>
 
   <!-- @if build === 'debug' -->
   <script src="/src/scripts/bu.js"></script>
+  <script src="/src/scripts/bu.utility.js"></script>
   <script src="/src/scripts/bu.settings.js"></script>
   <script src="/src/scripts/bu.console.js"></script>
   <script src="/src/scripts/bu.events.js"></script>
+  <script src="/src/scripts/bu.images.js"></script>
+
   <script src="/src/scripts/bu.container.js"></script>
   <script src="/src/scripts/bu.content.js"></script>
+  <script src="/src/scripts/bu.responsive.js"></script>
+  <script src="/src/scripts/bu.background.js"></script>
   <!-- @endif -->
   <!-- @if build === 'release' -->
   <script src="/release/bu.min.js"></script>

@@ -3,12 +3,23 @@
 // directive: bu-flex
 //-------------------------------------------------------------------
 angular.module('bu')
-.directive('buFlex', ['$timeout', 'bu.console', 'bu.events', 'bu.settings',
+.directive('buFlex', [
+  '$timeout',
+  'bu.console', 'bu.events', 'bu.settings', 'bu.utility',
 
-  function($timeout, $c, $events, $settings) {
+  function($timeout, $c, $events, $settings, $u) {
+    var SPECIFICATION = {
+      name    : 'buFlex',
+      options : [ 'height', 'width' ],
+      defaults: {
+        height: undefined,
+        width : undefined,
+      }
+    };
     var $console = $c.instance('bu-flex');
 
     function linker(scope, element, attrs) {
+      var options = $u.createOptions(SPECIFICATION, attrs);
       var orientation = element.attr('bu-flex');
 
       //-------------------------------------------------------------
@@ -50,6 +61,14 @@ angular.module('bu')
         total = total + 1; // avoid one pixel problem
         $console.debug('total - ' + total);
 
+        // set base font-size based on its parent element
+        if (orientation === 'column') {
+          element.css('font-size', element.parent().height() / children.length);
+        } else {
+          element.css('font-size', element.parent().width() / children.length);
+        }
+
+
         // assign new dimensions
         angular.forEach(children, function(child) {
           elem = angular.element(child);
@@ -70,8 +89,6 @@ angular.module('bu')
 
       function resizeHandler(value, old) {
         $console.debug('repositioning');
-        $console.debug('old - ' + old + ', new - ' + value);
-
         if (value && angular.isDefined(attrs.buFlexEvent)) {
           $timeout(function() {
             $events.fire('bu.flex', attrs.buFlexEvent);
@@ -80,6 +97,7 @@ angular.module('bu')
         value && reposition();
       }
 
+      /* watch dimension change */
       if (orientation === 'row') {
         /* remove span element spacing */
         element.contents().filter(function() {
@@ -89,25 +107,25 @@ angular.module('bu')
         scope.$watch(function() {
           return element[0].offsetWidth;
         }, _.throttle(resizeHandler, $settings.FLEX_RESIZE_INTERVAL, {
-          leading : false,
-          trailing: true
+          leading: false, trailing: true
         }));
       } else if (orientation === 'column') {
         scope.$watch(function() {
           return element[0].offsetHeight;
         }, _.throttle(resizeHandler, $settings.FLEX_RESIZE_INTERVAL, {
-          leading : false,
-          trailing: true
+          leading: false, trailing: true
         }));
-      } else {
-        $console.assert(false, 'invalid orientation - ' + orientation || 'undefined');
       }
 
-      reposition();
+      $timeout(function() {
+        reposition();
+        element.css('visibility', 'visible');
+      });
     }
 
     return {
       restrict: 'A',
+      scope   : false,
       link    : linker,
     };
   }
