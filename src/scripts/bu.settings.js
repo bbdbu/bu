@@ -16,12 +16,15 @@ angular.module('bu')
   // resizing interval //
   RESIZE_INTERVAL: 200, /* unit: ms */
 
-  // bu.responsive //
+  // DEFAULTS: bu.responsive break points //
   RESPONSIVE_SMALL : 320,
   RESPONSIVE_LARGE : 640,
 
-  // bu.background //
+  // DEFAULTS: bu.background //
   BG_SIZE    : 'cover',
   BG_POSITION: 'center',
-  BG_REPEAT  : 'no-repeat'
+  BG_REPEAT  : 'no-repeat',
+
+  // DEFAULTS: bu.lang //
+  LANG_DEFAULT: 'en'
 });

@@ -1,23 +1,19 @@
 //-------------------------------------------------------------------
 // bu.flex
 //-------------------------------------------------------------------
-.bu .flex.column {
+.bu.flex > .expand {
+  @include flex-grow(1);
+  @include flex-shrink(1);
+}
+.bu.flex.column {
   height: 100% !important;
-  display: flex;
-  flex-direction: column;
 
-  & > .expand {
-    flex-grow  : 1;
-    flex-shrink: 1;
-  }
+  @include display-flex;
+  @include flex-direction(column);
 }
 .bu .flex.row {
   width: 100% !important;
-  display: flex;
-  flex-direction: row;
 
-  & > .expand {
-    flex-grow  : 1;
-    flex-shrink: 1;
-  }
+  @include display-flex;
+  @include flex-direction(row);
 }

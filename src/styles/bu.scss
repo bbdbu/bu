@@ -4,47 +4,36 @@
 @import "compass/css3";
 
 /* bu styles */
+@import "modules/colors/default"; /* color skin */
+@import "modules/langs/en";       /* fonts */
 @import "modules/bu.variables";
+
 @import "modules/bu.mixins";
-@import "modules/bu.fonts";
+@import "modules/bu.fonts";  /* specify fonts for elements */
+@import "modules/bu.colors"; /* specify colors for elements */
+
+/* active stylings */
 @import "modules/bu.reset";
 @import "modules/bu.flex";
-@import "modules/bu.container";
 @import "modules/bu.content";
+@import "modules/bu.cover.gutenberg"; /* cover skin: gutenberg */
+
+/* formatters */
 @import "modules/bu.page";
-@import "modules/bu.cover";
 
-@import "modules/bu.lang.en";
-@import "modules/bu.elements";
-
-.slabtexted .slabtext
-        {
-        display:-moz-inline-box;
-        display:inline-block;
-        white-space:nowrap;
-        }
-.slabtextinactive .slabtext
-        {
-        display:inline;
-        white-space:normal;
-        font-size:1em !important;
-        letter-spacing:inherit !important;
-        word-spacing:inherit !important;
-        *letter-spacing:0 !important;
-        *word-spacing:0 !important;
-        }
-.slabtextdone .slabtext
-        {
-        display:block;
-        }
+/* elements */
+@import "modules/bu.blocks";
+@import "modules/bu.paragraphs";
+@import "modules/bu.lines";
+@import "modules/bu.inlines";
 
 /* @if build !== 'release' */
-  * *:hover { outline: dotted #89A81E }                  /* Solid Green */
-  * * *:hover { outline: dotted #F34607 }                /* Solid Orange */
-  * * * *:hover { outline: dotted #5984C3 }              /* Solid Blue */
-  * * * * *:hover { outline: dotted #CD1821 }            /* Solid Red */
-  * * * * * *:hover { outline: dotted #89A81E }          /* Dotted Green */
-  * * * * * * *:hover { outline: dotted #F34607 }        /* Dotted Orange */
-  * * * * * * * *:hover { outline: dotted #5984C3 }      /* Dotted Blue */
-  * * * * * * * * *:hover { outline: dotted #CD1821 }    /* Dotted Red */
+* *:hover { outline: dotted #89A81E }                  /* Solid Green */
+* * *:hover { outline: dotted #F34607 }                /* Solid Orange */
+* * * *:hover { outline: dotted #5984C3 }              /* Solid Blue */
+* * * * *:hover { outline: dotted #CD1821 }            /* Solid Red */
+* * * * * *:hover { outline: dotted #89A81E }          /* Dotted Green */
+* * * * * * *:hover { outline: dotted #F34607 }        /* Dotted Orange */
+* * * * * * * *:hover { outline: dotted #5984C3 }      /* Dotted Blue */
+* * * * * * * * *:hover { outline: dotted #CD1821 }    /* Dotted Red */
 /* @endif */

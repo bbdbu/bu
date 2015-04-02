@@ -1,0 +1,84 @@
+//
+// bu.paragraphs
+//
+
+.bu.content %paragraph {
+  padding      : $buParagraphPadding;
+  margin-bottom: $buBlockMarginBottom;
+}
+
+p {
+  @extend %paragraph;
+
+  text-indent: $buParagraphIndent;
+  text-align : justify;
+}
+
+/* ul, ol : no margin around it */
+ol, ul {
+  @extend %paragraph;
+  margin : .25rem 0 0 0 !important;
+}
+
+// CHAPTER TITLE
+.bu.content {
+  #{$buChapterTitleElements} {
+    font-family: $buChapterTitleFont !important;
+    text-align : $buChapterTitleAlign;
+    @if $buChapterTitleBold { font-style: bold; }
+
+    & + p {
+      @if $buUnindentFirstParagraph { text-indent: 0; }
+      @if $buDropcapFirstParagraph  {
+        &:first-letter {
+          font-size  : 2.5em;
+          line-height: 1;
+        }
+      }
+    }
+  }
+}
+
+//---------------------------------------------------------
+// element: h1, h2, h3, h4, h5, h6
+//---------------------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+  @extend %paragraph;
+
+  line-height: $buLineHeightHeading;
+  font-weight: bold;
+  border     : none;
+}
+
+h1 {
+  font-size    : 1.6rem;
+  margin-top   : 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size    : 1.5rem;
+  margin-top   : 0.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size    : 1.2rem;
+  font-weight  : bold;
+  margin-top   : .5rem;
+  margin-bottom: .5rem;
+}
+
+h4, h5, h6 {
+  font-size    : 1rem;
+  font-weight  : bold;
+  margin-top   : .5rem;
+  margin-bottom: .5rem;
+}
+
+
+
+
+//
+// INLINE - i
+//

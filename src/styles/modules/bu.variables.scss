@@ -11,6 +11,40 @@ $device-medium-max: 1023px;  // medium - max: 1023px
 $device-large-min : 1024px;  // 1024 <= large
 
 /* colors */
+$buColorText   : $buColorDark;
+$buColorHeading: darken($buColorDark, 10%);
+
+/* font size */
+$buFontSizeSmall : 16px;
+$buFontSizeMedium: 18px;
+$buFontSizeLarge : 18px;
+
+$buLineHeightSmall : 1.4;
+$buLineHeightMedium: 1.6;
+$buLineHeightLarge : 1.6;
+
+$buLineHeightHeading: 1.2;
+
+/* special stylings */
+$buUnindentFirstParagraph: true; // no indentation for first paragraph
+$buDropcapFirstParagraph : true; // dropcap first letter
+
+/* bu.paragraphs */
+$buParagraphPadding     : 0 1.5rem;
+$buParagraphMarginBottom: 1rem;
+$buParagraphIndent      : 1.25rem;
+
+/* chapter titles */
+$buChapterTitleElements: h2, h3;
+$buChapterTitleAlign   : center;
+$buChapterTitleBold    : true;
+$buChapterTitleFont    : $buFontSerif;
+
+/* bu.blocks */
+$buBlockPadding     : 0 0;
+$buBlockMarginBottom: 1rem;
+
+
 $bukPrimaryGreenColor: #2fb88b;
 $bukPrimaryBlueColor : #3d88c7;
 

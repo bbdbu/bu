@@ -1,0 +1,50 @@
+//
+// bu.inlines
+//
+.bu.content %inline { display: inline; }
+
+i {
+  @extend %inline;
+  font-style: italic;
+}
+
+//---------------------------------------------------------
+// element: link
+//---------------------------------------------------------
+a {
+  color: $buColorDark;
+  text-decoration: underline;
+}
+
+//---------------------------------------------------------
+// element: miscellaneous
+//---------------------------------------------------------
+em {
+  font-style: italic;
+}
+
+//---------------------------------------------------------
+// element: sup, sub
+//---------------------------------------------------------
+sub,
+sup {
+  font-size     : 75%;
+  line-height   : 0;
+  position      : relative;
+  vertical-align: baseline;
+  white-space   : nowrap;
+}
+
+sup {
+  top: -0.45rem;
+  & > a {
+    text-decoration: none;
+  }
+}
+
+sub {
+  bottom: -0.225rem;
+  & > a {
+    text-decoration: none;
+  }
+}

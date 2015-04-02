@@ -1,0 +1,62 @@
+//
+// bu.blocks
+//
+// HTML elements:
+//   section, blockquote, article, aside, code, main
+//   pre, dl, ol, ul, embed, footer, summary, table
+//
+// BU elements:
+//   bu-block
+
+.bu.content %block {
+  margin-bottom: $buBlockMarginBottom;
+}
+
+/* bu-block */
+[bu-block] {
+  @extend %block;
+}
+
+blockquote {
+  @extend %block;
+
+  quotes     : "\201C" "\201D";
+  padding    : 1rem 1.75rem 1rem 1.75rem;
+  position   : relative;
+  overflow   : hidden;
+
+  &:before {
+    content: open-quote;
+    font-size: 2.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &:after {
+    content: close-quote;
+    font-size: 2.5rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+pre, code {
+  @extend %block;
+
+  word-break: break-word; // wrap around long lines
+}
+
+//---------------------------------------------------------
+// element: dl, dt, dd
+//---------------------------------------------------------
+dl {
+  @extend %block;
+
+  dt {
+    float: left;
+    clear: left;
+    font-family: $buFontSans;
+    font-weight: bold;
+  }
+}

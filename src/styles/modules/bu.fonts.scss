@@ -2,10 +2,15 @@
 // bu.fonts
 //-------------------------------------------------------------------
 
-body {
-  font-family: $bukFontContent;
+.bu.content {
+  font-family: $buFontSerif !important;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $buFontSans !important;
+  }
+
+  code, pre {
+    font-family: $buFontMono !important;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $bukFontHeader;
-}
