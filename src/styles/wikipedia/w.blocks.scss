@@ -2,14 +2,20 @@
 // w.blocks
 //
 
-.bu.content %block {
-  margin-bottom: $buBlockMarginBottom;
+/* TOC */
+.bu.content #toc,
+.bu.content .toc {
+  margin: 0 0;
+  background-color: lighten($buColorLight, 10%);
 }
 
-#toc ul,
-.toc ul {
-  @extend %block;
-
-  list-style: none;
+.bu.content #toc ul,
+.bu.content .toc ul {
+  margin          : 0 0 $buBlockMarginBottom 0;
+  list-style      : none;
   list-style-image: none;
+}
+
+.bu.content .thumbimage {
+  border: 1px solid #ccc;
 }

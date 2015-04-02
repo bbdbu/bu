@@ -3,8 +3,7 @@
 //
 
 .bu.content %paragraph {
-  padding      : $buParagraphPadding;
-  margin-bottom: $buBlockMarginBottom;
+  padding: $buParagraphPadding;
 }
 
 p {
@@ -12,14 +11,20 @@ p {
 
   text-indent: $buParagraphIndent;
   text-align : justify;
+  margin     : 0 0 1rem 0;
 }
 
 /* image */
 img {
+
   @if $buPictureExtend == false {
     @extend %paragraph;
   }
-  max-width: 100%;
+  max-width     : 100%;
+  margin        : 0 auto;
+  height        : auto;
+  margin        : 0 0 1rem 0;
+  vertical-align: bottom;
 }
 
 // CHAPTER TITLE
@@ -44,36 +49,30 @@ img {
 //---------------------------------------------------------
 // element: h1, h2, h3, h4, h5, h6
 //---------------------------------------------------------
+@mixin heading($level) {
+  font-size: $buHeadingFontSizeBase  + (6 - $level) * 0.2rem;
+  margin   : $buHeadingMarginTopBase + (6 - $level) * 0.05rem 0 $buHeadingMarginBottomBase + (6 - $level) * 0.1rem 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   @extend %paragraph;
 
   line-height: $buLineHeightHeading;
   font-weight: bold;
   border     : none;
+  text-align : left;
 }
 
-h1 {
-  font-size    : 1.6rem;
-  margin-top   : 0.5rem;
-  margin-bottom: 1.5rem;
+.bu.content {
+  h1 { @include heading(1); }
+  h2 { @include heading(2); }
+  h3 { @include heading(3); }
+  h4 { @include heading(4); }
+  h5 { @include heading(5); }
+  h6 { @include heading(6); }
 }
 
-h2 {
-  font-size    : 1.5rem;
-  margin-top   : 0.5rem;
-  margin-bottom: 1rem;
-}
-
-h3 {
-  font-size    : 1.2rem;
-  font-weight  : bold;
-  margin-top   : .5rem;
-  margin-bottom: .5rem;
-}
-
-h4, h5, h6 {
-  font-size    : 1rem;
-  font-weight  : bold;
-  margin-top   : .5rem;
-  margin-bottom: .5rem;
+.bu.content hr {
+  width     : 50%;
+  text-align: center;
 }

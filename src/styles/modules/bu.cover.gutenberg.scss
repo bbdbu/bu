@@ -69,13 +69,13 @@
 .bu.back.cover {
 
   $padding-base   : 1rem;
-  $font-base      : 0.75rem;
+  $font-base      : 1rem;
   $definition-base: 6em;
 
   $font-base-text   : $font-base * 0.8;
-  $font-base-title  : $font-base * 0.8;
-  $font-base-artist : $font-base * 0.8;
-  $font-base-gallery: $font-base * 0.8;
+  $font-base-title  : $font-base;
+  $font-base-artist : $font-base;
+  $font-base-gallery: $font-base;
 
   padding: 0.5 * $padding-base $padding-base;
 

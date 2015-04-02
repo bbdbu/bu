@@ -19,6 +19,11 @@ html {
     line-height: $buLineHeightLarge;
   }
 }
+
+body {
+  margin: 0;
+  background-color: transparent;
+}
 //---------------------------------------------------------
 
 .bu.content {

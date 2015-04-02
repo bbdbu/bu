@@ -51,6 +51,6 @@ angular.module('bu')
       restrict: 'A',
       scope   : false,
       link    : linker,
-    }
+    };
   }
 ]);

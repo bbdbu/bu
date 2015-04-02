@@ -9,13 +9,16 @@ $device-small-max : 480px;   // small <= 480
 $device-medium-min: 481px;   // medium - min: 481px
 $device-medium-max: 1023px;  // medium - max: 1023px
 $device-large-min : 1024px;  // 1024 <= large
-//-------------------------------------------------------------------
 
-/* colors */
+//-------------------------------------------------------------------
+// COLORS
+//-------------------------------------------------------------------
 $buColorText   : $buColorDark;
 $buColorHeading: darken($buColorDark, 10%);
 
-/* font size */
+//-------------------------------------------------------------------
+// FONT SIZE (Global)
+//-------------------------------------------------------------------
 $buFontSizeSmall : 16px;
 $buFontSizeMedium: $buFontSizeSmall  * 1.1;
 $buFontSizeLarge : $buFontSizeMedium * 1.1;
@@ -27,23 +30,28 @@ $buLineHeightLarge : 1.6;
 $buLineHeightHeading: 1.2;
 
 /* special stylings */
-$buUnindentFirstParagraph: true; // no indentation for first paragraph
-$buDropcapFirstParagraph : true; // dropcap first letter
+$buUnindentFirstParagraph: false; // no indentation for first paragraph
+$buDropcapFirstParagraph : false; // dropcap first letter
 
 /* bu.paragraphs */
 $buParagraphPadding     : 0 1.5rem;
 $buParagraphMarginBottom: 1rem;
-$buParagraphIndent      : 1.25rem;
+$buParagraphIndent      : 0;
 
-$buPictureExtend        : true;
+$buPictureExtend        : false;
 
-/* chapter titles */
-$buChapterTitleElements: h2, h3;
+// h1,h2,h3,h4,h5,h6 //
+$buHeadingFontSizeBase    : 0.8rem;
+$buHeadingMarginTopBase   : 0.3rem;
+$buHeadingMarginBottomBase: 0.5rem;
+
+// chapter titles //
+$buChapterTitleElements: h1, h2, h3;
 $buChapterTitleAlign   : center;
 $buChapterTitleBold    : true;
 $buChapterTitleFont    : $buFontSerif;
 
 /* bu.blocks */
-$buBlockPadding     : 0 0;
+$buBlockPadding     : 0.5rem 1.5rem;
 $buBlockMarginBottom: 1rem;
 

@@ -54,8 +54,7 @@ angular.module('bu')
           $console.debug('large - ' + value);
         }
       }
-
-      scope.$watch(function() { apply(); });
+      $e.wait('bu-responsive', 'BU:RESIZE', function() { apply(); });
       apply();
     }
 

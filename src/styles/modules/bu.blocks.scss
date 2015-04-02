@@ -9,7 +9,7 @@
 //   bu-block
 
 .bu.content %block {
-  margin-bottom: $buBlockMarginBottom;
+  margin: 0 0 $buBlockMarginBottom 0;
 }
 
 /* bu-block */
@@ -17,34 +17,20 @@
   @extend %block;
 }
 
-blockquote {
-  @extend %block;
-
-  quotes     : "\201C" "\201D";
-  padding    : 1rem 1.75rem 1rem 1.75rem;
-  position   : relative;
-  overflow   : hidden;
-
-  &:before {
-    content: open-quote;
-    font-size: 2.5rem;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  &:after {
-    content: close-quote;
-    font-size: 2.5rem;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+.bu.content blockquote {
+  padding: $buBlockPadding;
+  background-color: lighten($buColorLight, 10%);
+  & > p {
+    padding: 0 0 0 0;
   }
 }
 
-pre, code {
-  @extend %block;
-
+.bu.content pre,
+.bu.content code {
+  margin    : 0 0 $buBlockMarginBottom 0;
   word-break: break-word; // wrap around long lines
+  font-style: normal;
+  font-size : 100%;
 }
 
 //---------------------------------------------------------
@@ -52,13 +38,15 @@ pre, code {
 //---------------------------------------------------------
 ol, ul {
   @extend %block;
-  padding: $buParagraphPadding;
-  margin : .25rem 0 0 0 !important;
 
+  padding   : $buParagraphPadding;
+  margin    : .25rem 0 0 0 !important;
+  text-align: left;
   li {
     padding: 0 0;
   }
 }
+
 .bu.content {
   ul ol,
   ol ul,
