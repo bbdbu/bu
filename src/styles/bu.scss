@@ -27,6 +27,9 @@
 @import "modules/bu.lines";
 @import "modules/bu.inlines";
 
+/* wikipedia */
+@import "wikipedia/w.blocks";
+
 /* @if build !== 'release' */
 * *:hover { outline: dotted #89A81E }                  /* Solid Green */
 * * *:hover { outline: dotted #F34607 }                /* Solid Orange */

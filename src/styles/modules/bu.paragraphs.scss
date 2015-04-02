@@ -14,10 +14,12 @@ p {
   text-align : justify;
 }
 
-/* ul, ol : no margin around it */
-ol, ul {
-  @extend %paragraph;
-  margin : .25rem 0 0 0 !important;
+/* image */
+img {
+  @if $buPictureExtend == false {
+    @extend %paragraph;
+  }
+  max-width: 100%;
 }
 
 // CHAPTER TITLE
@@ -75,10 +77,3 @@ h4, h5, h6 {
   margin-top   : .5rem;
   margin-bottom: .5rem;
 }
-
-
-
-
-//
-// INLINE - i
-//

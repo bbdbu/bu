@@ -3,12 +3,13 @@
 //-------------------------------------------------------------------
 
 //-------------------------------------------------------------------
-// CONSTANTS
+// INTERNAL CONSTANTS
 //-------------------------------------------------------------------
 $device-small-max : 480px;   // small <= 480
 $device-medium-min: 481px;   // medium - min: 481px
 $device-medium-max: 1023px;  // medium - max: 1023px
 $device-large-min : 1024px;  // 1024 <= large
+//-------------------------------------------------------------------
 
 /* colors */
 $buColorText   : $buColorDark;
@@ -16,8 +17,8 @@ $buColorHeading: darken($buColorDark, 10%);
 
 /* font size */
 $buFontSizeSmall : 16px;
-$buFontSizeMedium: 18px;
-$buFontSizeLarge : 18px;
+$buFontSizeMedium: $buFontSizeSmall  * 1.1;
+$buFontSizeLarge : $buFontSizeMedium * 1.1;
 
 $buLineHeightSmall : 1.4;
 $buLineHeightMedium: 1.6;
@@ -33,6 +34,8 @@ $buDropcapFirstParagraph : true; // dropcap first letter
 $buParagraphPadding     : 0 1.5rem;
 $buParagraphMarginBottom: 1rem;
 $buParagraphIndent      : 1.25rem;
+
+$buPictureExtend        : true;
 
 /* chapter titles */
 $buChapterTitleElements: h2, h3;

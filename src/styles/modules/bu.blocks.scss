@@ -48,6 +48,28 @@ pre, code {
 }
 
 //---------------------------------------------------------
+// element: ul, ol
+//---------------------------------------------------------
+ol, ul {
+  @extend %block;
+  padding: $buParagraphPadding;
+  margin : .25rem 0 0 0 !important;
+
+  li {
+    padding: 0 0;
+  }
+}
+.bu.content {
+  ul ol,
+  ol ul,
+  ul ul,
+  ol ol {
+    margin-bottom: 0;
+    padding: 0 0 0 1.5rem;
+  }
+}
+
+//---------------------------------------------------------
 // element: dl, dt, dd
 //---------------------------------------------------------
 dl {

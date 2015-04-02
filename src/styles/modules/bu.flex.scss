@@ -11,7 +11,7 @@
   @include display-flex;
   @include flex-direction(column);
 }
-.bu .flex.row {
+.bu.flex.row {
   width: 100% !important;
 
   @include display-flex;

@@ -1,0 +1,17 @@
+//
+// w.blocks
+//
+
+.bu.content %block {
+  margin-bottom: $buBlockMarginBottom;
+}
+
+#toc ul,
+.toc ul {
+  @extend %block;
+
+  list-style: none;
+  list-style-image: none;
+
+  text-align: left;
+}
