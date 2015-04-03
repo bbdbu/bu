@@ -1,72 +1,48 @@
-//
+//-------------------------------------------------------------------
 // bu.blocks
-//
+//-------------------------------------------------------------------
 // HTML elements:
 //   section, blockquote, article, aside, code, main
-//   pre, dl, ol, ul, embed, footer, summary, table
+//   pre, embed, footer, summary, table
 //
 // BU elements:
-//   bu-block
+//   .bu.page, .bu.block
+//-------------------------------------------------------------------
 
-.bu.content %block {
-  margin: 0 0 $buBlockMarginBottom 0;
-}
-
-/* bu-block */
-[bu-block] {
-  @extend %block;
-}
-
-.bu.content blockquote {
+%block {
+  margin : $buBlockMargin;
   padding: $buBlockPadding;
-  background-color: lighten($buColorLight, 10%);
-  & > p {
-    padding: 0 0 0 0;
-  }
 }
 
-.bu.content pre,
-.bu.content code {
-  margin    : 0 0 $buBlockMarginBottom 0;
-  word-break: break-word; // wrap around long lines
-  font-style: normal;
-  font-size : 100%;
+//-------------------------------------------------------------------
+// element: .bu.page, .bu.block
+//-------------------------------------------------------------------
+.bu.content .bu.page {
+  width   : 100%;
+  height  : 100%;
+  padding : 0 0;
+  margin  : 0 0;
+  overflow: hidden;
 }
-
-//---------------------------------------------------------
-// element: ul, ol
-//---------------------------------------------------------
-ol, ul {
+.bu.content .bu.block {
   @extend %block;
-
-  padding   : $buParagraphPadding;
-  margin    : .25rem 0 0 0 !important;
-  text-align: left;
-  li {
-    padding: 0 0;
-  }
 }
 
+//-------------------------------------------------------------------
+// element: blockquote, pre, code, section
+//-------------------------------------------------------------------
 .bu.content {
-  ul ol,
-  ol ul,
-  ul ul,
-  ol ol {
-    margin-bottom: 0;
-    padding: 0 0 0 1.5rem;
+  blockquote, pre, code, section { @extend %block; }
+
+  blockquote {
+    & > * {
+      padding-left : 0;
+      padding-right: 0;
+    }
   }
-}
-
-//---------------------------------------------------------
-// element: dl, dt, dd
-//---------------------------------------------------------
-dl {
-  @extend %block;
-
-  dt {
-    float: left;
-    clear: left;
-    font-family: $buFontSans;
-    font-weight: bold;
+  pre, code {
+    word-break: break-word; // wrap around long lines
+    font-style: normal;
+    font-size : 100%;
   }
 }

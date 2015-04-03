@@ -1,7 +1,14 @@
-//
+//-------------------------------------------------------------------
 // bu.lines
-//
+//-------------------------------------------------------------------
 
+.bu.content ol,
+.bu.content ul,
+.bu.content dl {
+  li { padding: 0 0; }
+  dd { padding: 0 0; }
+  df { padding: 0 0; }
+}
 // ol li {
 //   margin : 0.125rem 0 0 2.5rem; // maximum 3 digits
 // }

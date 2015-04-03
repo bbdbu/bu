@@ -3,12 +3,21 @@
 //-------------------------------------------------------------------
 
 //-------------------------------------------------------------------
-// INTERNAL CONSTANTS
+// BU-RESPONSIVE (mixin)
 //-------------------------------------------------------------------
-$device-small-max : 480px;   // small <= 480
-$device-medium-min: 481px;   // medium - min: 481px
-$device-medium-max: 1023px;  // medium - max: 1023px
-$device-large-min : 1024px;  // 1024 <= large
+$buResponsiveSmallMax : 480px;   // small <= 480
+$buResponsiveMediumMin: 481px;   // medium  min: 481px
+$buResponsiveMediumMax: 1023px;  // medium  max: 1023px
+$buResponsiveLargeMin : 1024px;  // 1024 <= large
+
+//-------------------------------------------------------------------
+// INDENT, BLOCK SEPARATION, PARAGRAPH SEPARATION
+//-------------------------------------------------------------------
+$buHSpace         : 1.5rem;
+$buIndent         : 1.2rem;
+$buBlockVSpace    : 1.2rem;
+$buParagraphVSpace: 1.0rem;
+$buLineVSpace     : 0;
 
 //-------------------------------------------------------------------
 // COLORS
@@ -33,11 +42,20 @@ $buLineHeightHeading: 1.2;
 $buUnindentFirstParagraph: false; // no indentation for first paragraph
 $buDropcapFirstParagraph : false; // dropcap first letter
 
-/* bu.paragraphs */
-$buParagraphPadding     : 0 1.5rem;
-$buParagraphMarginBottom: 1rem;
+//-------------------------------------------------------------------
+// BLOCK
+//-------------------------------------------------------------------
+$buBlockPadding: 0.5rem $buHSpace;
+$buBlockMargin : 0 0 $buBlockVSpace 0;
+
+//-------------------------------------------------------------------
+// PARAGRAPH
+//-------------------------------------------------------------------
+$buParagraphPadding     : 0 $buHSpace;
+$buParagraphMargin      : 0 0 $buParagraphVSpace 0;
 $buParagraphIndent      : 0;
 
+// img (picture element)
 $buPictureExtend        : false;
 
 // h1,h2,h3,h4,h5,h6 //
@@ -48,10 +66,5 @@ $buHeadingMarginBottomBase: 0.5rem;
 // chapter titles //
 $buChapterTitleElements: h1, h2, h3;
 $buChapterTitleAlign   : center;
-$buChapterTitleBold    : true;
+$buChapterTitleStyle   : bold;
 $buChapterTitleFont    : $buFontSerif;
-
-/* bu.blocks */
-$buBlockPadding     : 0.5rem 1.5rem;
-$buBlockMarginBottom: 1rem;
-

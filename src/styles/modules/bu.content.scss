@@ -1,33 +1,7 @@
-//
+//-------------------------------------------------------------------
 // bu.content
-//
-
-//---------------------------------------------------------
-// global stylings
-//---------------------------------------------------------
-html {
-  @include responsive(small) {
-    font-size  : $buFontSizeSmall;
-    line-height: $buLineHeightSmall;
-  }
-  @include responsive(medium) {
-    font-size  : $buFontSizeMedium;
-    line-height: $buLineHeightMedium;
-  }
-  @include responsive(large) {
-    font-size  : $buFontSizeLarge;
-    line-height: $buLineHeightLarge;
-  }
-}
-
-body {
-  margin: 0;
-  background-color: transparent;
-}
-//---------------------------------------------------------
-
+//-------------------------------------------------------------------
 .bu.content {
-
   position  : absolute;
   width     : 100%;
   height    : 100%;

@@ -1,10 +1,11 @@
 //-------------------------------------------------------------------
 // bu.colors
 //-------------------------------------------------------------------
-
-body {
+.bu.content {
   color: $buColorText; /* default color */
-}
-h1, h2, h3, h4, h5, h6 {
-  color: $buColorHeading;
+  background-color: transparent;
+
+  h1, h2, h3, h4, h5, h6 { color: $buColorHeading; }
+  blockquote { background-color: lighten($buColorLight, 10%); }
+  a { color: $buColorDark; }
 }

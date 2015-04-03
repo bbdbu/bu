@@ -1,38 +1,46 @@
-//
+//-------------------------------------------------------------------
 // bu.paragraphs
-//
+//-------------------------------------------------------------------
+// HTML elements: p, ol, ul, dl
+//-------------------------------------------------------------------
 
-.bu.content %paragraph {
+%paragraph {
+  margin : $buParagraphMargin;
   padding: $buParagraphPadding;
 }
 
-p {
-  @extend %paragraph;
+.bu.content {
+  p, ol, ul, dl { @extend %paragraph; }
 
-  text-indent: $buParagraphIndent;
-  text-align : justify;
-  margin     : 0 0 1rem 0;
+  p {
+    text-indent: $buParagraphIndent;
+    text-align : justify;
+  }
 }
 
-/* image */
-img {
+.bu.content img {
+  @extend %paragraph;
 
-  @if $buPictureExtend == false {
-    @extend %paragraph;
+  @if $buPictureExtend == true {
+    padding: 0 0;
   }
+
   max-width     : 100%;
-  margin        : 0 auto;
+  margin-left   : auto;
+  margin-right  : auto;
   height        : auto;
-  margin        : 0 0 1rem 0;
   vertical-align: bottom;
 }
 
+//-------------------------------------------------------------------
 // CHAPTER TITLE
+//-------------------------------------------------------------------
 .bu.content {
   #{$buChapterTitleElements} {
-    font-family: $buChapterTitleFont !important;
+
+    font-family: $buChapterTitleFont;
     text-align : $buChapterTitleAlign;
-    @if $buChapterTitleBold { font-style: bold; }
+    font-style : $buChapterTitleStyle;
 
     & + p {
       @if $buUnindentFirstParagraph { text-indent: 0; }
@@ -54,13 +62,15 @@ img {
   margin   : $buHeadingMarginTopBase + (6 - $level) * 0.05rem 0 $buHeadingMarginBottomBase + (6 - $level) * 0.1rem 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @extend %paragraph;
+.bu.content {
+  h1, h2, h3, h4, h5, h6 {
+    @extend %paragraph;
 
-  line-height: $buLineHeightHeading;
-  font-weight: bold;
-  border     : none;
-  text-align : left;
+    line-height: $buLineHeightHeading;
+    font-weight: bold;
+    border     : none;
+    text-align : left;
+  }
 }
 
 .bu.content {
@@ -75,4 +85,46 @@ h1, h2, h3, h4, h5, h6 {
 .bu.content hr {
   width     : 50%;
   text-align: center;
+}
+
+//---------------------------------------------------------
+// element: ul, ol
+//---------------------------------------------------------
+.bu.content {
+  ol, ul, dl {
+    @extend %paragraph;
+    text-align: left;
+  }
+  /* deep paragraphs */
+  ul ol,
+  ol ul,
+  ul ul,
+  ol ol {
+    margin-bottom: 0;
+    padding: 0 0 0 $buIndent;
+  }
+}
+ol,
+.bu.content ul {
+  padding   : $buParagraphPadding;
+  margin    : .25rem 0 0 0 !important;
+  text-align: left;
+  li {
+    padding: 0 0;
+  }
+}
+
+.bu.content {
+}
+
+//---------------------------------------------------------
+// element: dl, dt, dd
+//---------------------------------------------------------
+.bu.content dl {
+  dt {
+    float: left;
+    clear: left;
+    font-family: $buFontSans;
+    font-weight: bold;
+  }
 }

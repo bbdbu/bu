@@ -1,19 +1,21 @@
 //-------------------------------------------------------------------
 // bu.flex
 //-------------------------------------------------------------------
-.bu.flex > .expand {
-  @include flex-grow(1);
-  @include flex-shrink(1);
-}
-.bu.flex.column {
-  height: 100% !important;
+.bu.content {
+  .bu.flex > .expand {
+    @include flex-grow(1);
+    @include flex-shrink(1);
+  }
+  .bu.flex.column {
+    height: 100% !important;
 
-  @include display-flex;
-  @include flex-direction(column);
-}
-.bu.flex.row {
-  width: 100% !important;
+    @include display-flex;
+    @include flex-direction(column);
+  }
+  .bu.flex.row {
+    width: 100% !important;
 
-  @include display-flex;
-  @include flex-direction(row);
+    @include display-flex;
+    @include flex-direction(row);
+  }
 }
