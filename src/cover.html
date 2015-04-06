@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+
+  <!-- mobile webapp configuration -->
+  <meta name="apple-mobile-web-app-capable" content="yes"><!-- full screen -->
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="transparent">
+  <meta name="format-detection" content="telephone=no"><!-- no phone number recognition -->
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"><!-- fixed scale to 1.0 -->
+
+  <title>{ title }</title>
+
+  <!-- @if build === 'debug' -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="/build/static/css/cover.css">
+  <!-- @endif -->
+  <!-- @if build === 'release' -->
+  <link rel="stylesheet" type="text/css" href="/release/cover.min.css">
+  <!-- @endif -->
+</head>
+
+<body>
+  <div class="bu cover">
+    <div class="bu page">
+      <div style="height: 60%;background-image: url('/src/images/cover.jpg');background-size: cover;background-repeat: no-repeat;background-position:center center;">
+        <div class="bu column flex">
+          <div class="expand"></div>
+          <div class="bu collection">Gutenberg Collection</div>
+        </div>
+      </div>
+      <div style="height: 40%">
+        <div class="bu flex column">
+          <div class="expand"></div>
+          <div style="line-height:1.1;font-size: 2.5em;font-weight: bold;padding: 0 1em;color: rgb(54, 54, 54);letter-spacing: -1px;">{ A TALE OF TWO CITIES, A TALE OF TWO CITIES }</div>
+          <div style="line-height:1.1;font-size: 1.8em;color: rgb(76, 97, 149);font-style: italic;padding: .5em 1em;">{ A STORY OF THE FRENCH REVOLUTION }</div>
+          <div class="expand"></div>
+          <div style="color:rgb(111,111,111);font-weight:bold;line-height:1.1;font-size:2.0em;padding: 0 1em;">{ Charles Dickens }</div>
+          <div class="expand"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bu page">
+      <div class="bu flex column">
+        <div class="expand"></div>
+        <div style="font-size: 2em;font-weight: bold;margin-bottom: 1.5rem;">Cover Art</div>
+        <div style="height: 40%;margin: 0 1.5rem;background-image: url('/src/images/cover.jpg');background-size: contain; background-repeat: no-repeat;background-position: center center;">
+        </div>
+        <dl>
+          <dt>Title</dt><dd><a href="http://buk.io/@en/The_Starry_Night">The Starry Night</a></dd>
+          <dt>Completion</dt><dd>2015</dd>
+          <dt>Artist</dt><dd><a href="http://buk.io@en/Vincent_van_Gogh">Vincent van Gogh</a></dd>
+          <dt>Style</dt><dd>Realism</dd>
+          <dt>Gallery</dt><dd>Private Collection</dd>
+          <dt>Description</dt><dd>Very good painting. Very good painting. Very good painting. Very good painting</dd>
+        </dl>
+        <div class="expand"></div>
+      </div>
+    </div>
+    <div class="bu page">
+      <div class="bu flex column">
+        <div class="expand"></div>
+        <dl>
+          <dt>Title</dt><dd>A TALE OF TWO CITIES</dd>
+          <dt>Subtitle</dt><dd>A STORY OF THE FRENCH REVOLUTION</dd>
+          <dt>Author(s)</dt><dd>Charles Dickens</dd>
+          <dt>Editor(s)</dt><dd>Furnivall, Frederick James, 1825-1910</dd>
+          <dt>Version<dt><dd>1.0<dd>
+          <dt>Published</dt><dd>2015.4.30</dd>
+          <dt>Formatter</dt><dd><a href="http://bbdbu.com">bbdbu</a> epub2buk 1.0</dd>
+          <dt>URL</dt><dd>buk.io/@24790</dd>
+          <dt>Language</dt><dd>English</dd>
+          <dt>Rights</dt><dd>Public domain in the U.S.</dd>
+          <dt>Contact</dt><dd>Corrections and feedback to <a href="mailto:contact@bbdbu.com">contact@bbdbu.com</a></dd>
+        </dl>
+        <div class="expand"></div>
+        <div class="bu collection">Gutenberg Collection</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -71,6 +71,13 @@ gulp.task('clean:release', [ 'clean:debug' ], function() {
 });
 
 /* styles */
+gulp.task('styles:cover:debug', function() {
+  return compass_scss(
+    'src/styles/cover.scss',
+    'build/static/css',
+    'src/styles'
+  );
+});
 gulp.task('styles:debug', function() {
   return compass_scss(
     'src/styles/bu.scss',
@@ -79,6 +86,13 @@ gulp.task('styles:debug', function() {
   );
 });
 
+gulp.task('styles:cover:release', [ 'styles:cover:debug' ], function() {
+  return minify_css(
+    'build/static/css/cover.css',
+    'release',
+    'cover.min.css'
+  );
+});
 gulp.task('styles:release', [ 'styles:debug' ], function() {
   return minify_css(
     'build/static/css/bu.css',
@@ -101,12 +115,22 @@ gulp.task('scripts:release', function() {
 });
 
 /* html */
+gulp.task('html:cover:debug', function() {
+  return compile_html('src/cover.html', 'build', {
+    build: 'debug'
+  });
+});
 gulp.task('html:debug', function() {
   return compile_html('src/index.html', 'build', {
     build: 'debug'
   });
 });
 
+gulp.task('html:cover:release', function() {
+  return compile_html('src/cover.html', 'build', {
+    build: 'release'
+  });
+});
 gulp.task('html:release', function() {
   return compile_html('src/index.html', 'build', {
     build: 'release'
@@ -122,6 +146,14 @@ gulp.task('server', function() {
     livereload: true
   });
 });
+gulp.task('server:cover', function() {
+  connect.server({
+    port      : 8800,
+    root      : ['build', '.'],
+    fallback  : 'build/cover.html',
+    livereload: true
+  });
+});
 
 /* watch */
 gulp.task('watch', function() {
@@ -129,8 +161,15 @@ gulp.task('watch', function() {
   gulp.watch('src/scripts/*.js', [ 'scripts:debug' ]);
   gulp.watch('src/**/*.html', [ 'html:debug' ]);
 });
+gulp.task('watch:cover', function() {
+  gulp.watch('src/styles/**/*.scss', [ 'styles:cover:debug' ]);
+  gulp.watch('src/**/*.html', [ 'html:cover:debug' ]);
+});
 
 /* develop */
 gulp.task('develop', [
   'clean:release', 'styles:debug', 'scripts:debug', 'html:debug', 'watch', 'server'
+]);
+gulp.task('develop:cover', [
+  'clean:release', 'styles:cover:debug', 'html:cover:debug', 'watch:cover', 'server:cover'
 ]);
