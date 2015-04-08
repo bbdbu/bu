@@ -1,0 +1,21 @@
+<div ng-controller="ParagraphController">
+  <select ng-model="settings.lineHeight" ng-options="height in heights">
+    <option value="">-- set lineheight --</option>
+  </select>
+</div>
+<div ng-style="{'line-height': settings.lineHeight">
+<p>
+Flavius Claudius Julianus,1 son of Julius Constantius and nephew of the Emperor Constantine, was born at Constantinople in 331 a.d. His father, eldest brother, and cousins were slain in the massacre by which Constantius, Constantine II., and Constans secured the empire for themselves on the death of their father Constantine in 337. Julian and his elder brother Gallus spent a precarious childhood and youth, of which six years were passed in close confinement in the remote castle of Macellum in Cappadocia, and their position was hardly more secure when, in 350, Gallus was elevated to the Caesarship by Constantius, who, after the violent deaths of his two brothers, was now sole ruler of the empire. But Julian was allowed to pursue his favourite studies in Greek literature and philosophy, partly at Nicomedia and Athens, partly in the cities [pg viii] of Asia Minor, and he was deeply influenced by Maximus of Ephesus, the occult philosopher, Libanius of Nicomedia, the fashionable sophist, and Themistius the Aristotelian commentator, the only genuine philosopher among the sophists of the fourth century a.d.
+</p>
+<p>
+When the excesses of the revolutionary Gallus ended in his death at the hands of Constantius, Julian, an awkward and retiring student, was summoned to the court at Milan, where he was protected by the Empress Eusebia from the suspicions of Constantius and the intrigues of hostile courtiers. Constantius had no heir to continue the dynasty of the Constantii. He therefore raised Julian to the Caesarship in 355, gave him his sister Helena in marriage, and dispatched him to Gaul to pacify the Gallic provinces. To the surprise of all, Julian in four successive campaigns against the Franks and the Alemanis proved himself a good soldier and a popular general. His Commentaries on these campaigns are praised by Eunapius2 and Libanius,3 but are not now extant. In 357-358 Constantius, who was occupied by wars against the Quadi and the Sarmatians, and threatened with a renewal of hostilities by the Persian king Sapor, ordered Julian, [pg ix] who was then at Paris, to send to his aid the best of the Gallic legions. Julian would have obeyed, but his troops, unwilling to take service in the East, mutinied and proclaimed him Emperor (359 a.d.). Julian issued manifestoes justifying his conduct to the Senates of Rome and Athens and to the Spartans and Corinthians, a characteristic anachronism, since their opinion no longer had any weight. It was not till 361 that he began his march eastward to encounter the army of Constantius. His troops, though seasoned and devoted, were in numbers no match for the legions of his cousin. But the latter, while marching through Cilicia to oppose his advance, died suddenly of a fever near Tarsus, and Julian, now in his thirtieth year, succeeded peacefully to the throne and made a triumphal entry into Constantinople in December, 361.
+</p>
+</div>
+<script>
+angular.module('bu', []).controller('ParagraphController', ['$scope', function($scope) {
+  $scope.heights = ['1', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '2.0'];
+  $scope.settings = {
+    'lineHeight': '1.2'
+  };
+}]);
+</script>
